@@ -2,16 +2,30 @@
 :root {
     --textColor:  #fff; 
     --primaryColor: #13293d; 
+    --backgroundColor: rgb(156, 190, 180); 
 }
 
 /* --STYLING-- */
 
-/* add html class default text sizing */
+/* add html class default text sizing and default text properties*/
+
+/* html, body {
+    height: 100%;
+} */
+
+h1,
+h2,
+h3 {
+    line-height: 1.5;
+    font-size: 12.5;
+}
 
 body {
-    background-color: antiquewhite;
+    background-color: var(--backgroundColor);
     /* add body text formatting */
 }
+
+/* fix extra margin space created by flex */
 
 header {
     display: flex;
@@ -24,7 +38,7 @@ header {
 
 .header-nav {
     display: flex;
-    background-color: #d8a47f;
+    background-color: var(--backgroundColor);
 }
 
 .header-nav a {
@@ -34,6 +48,37 @@ header {
     text-align: center;
 }
 
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('./images/geometric-pattern.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    position: relative;
+    text-align: center;
+}
+
+.banner-container{
+    max-width: 960px;
+    margin-left:auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+ .banner-subtitle {
+
+    background-color: var(--backgroundColor);
+    /* Positioning on image */
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+} 
 
 /* --QUERIES-- */
 
