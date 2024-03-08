@@ -1,0 +1,44 @@
+/* --VARIABLES-- */
+:root {
+    --textColor:  #fff; 
+    --primaryColor: #13293d; 
+}
+
+/* --STYLING-- */
+
+/* add html class default text sizing */
+
+body {
+    background-color: antiquewhite;
+    /* add body text formatting */
+}
+
+header {
+    display: flex;
+    /* Defines how to distribute the empty space between child elements */
+    justify-content: space-between;
+    padding: 60px;
+    background: var(--primaryColor);
+    color: var(--textColor);
+}
+
+.header-nav {
+    display: flex;
+    background-color: #d8a47f;
+}
+
+.header-nav a {
+    color: var(--textColor);
+    padding: 10px 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* --QUERIES-- */
+
+@media screen and (max-width: 976px){
+    .header-nav {
+        flex-direction: column;
+    }
+}
