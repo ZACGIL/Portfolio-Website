@@ -1,6 +1,7 @@
 /* --VARIABLES-- */
 :root {
-    --textColor:  #E7DFDD; 
+    --whiteColor:  #E7DFDD;
+    --orangeColor: orangered;  
     --primaryColor: #4171F6; 
     --secondaryColor: #A239CA;
     --backgroundColor: #0E0B16;
@@ -8,6 +9,7 @@
     --headerGradient: linear-gradient(0deg, rgba(14,11,22,1) 0%, rgba(65,113,246,1) 100%);
     --contentGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(231,223,221,1) 100%);
     --titleGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(162,57,202,1) 70%, rgba(65,113,246,1) 100%);
+    --refGradient: linear-gradient(90deg, rgba(162,57,202,1) 40%, rgba(65,113,246,1) 100%);
 }
 
 /* --STYLING-- */
@@ -23,34 +25,30 @@ h2,
 h3,
 h4 {
     line-height: 1.5;
-    font-size: 12.5;
-
-    font-family: fantasy;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body {
     background-color: var(--backgroundColor);
-    /* add body text formatting */
-}
-
-/* fix extra margin space created by flex */
+}                   
 
 header {
     display: flex;
     flex: 1 100%;
+
     /* Defines how to distribute the empty space between child elements */
     justify-content: space-between;
     padding: 60px;
-
     outline: 2px dashed var(--secondaryColor);
-    /* outline-offset: -2px; */
-
-    color: var(--textColor);
 }
 
 header h1 {
-    text-shadow: 1px 1px var(--textColor);
-    color: orangered;
+    /* text-shadow: 0.1rem 0.1rem var(--whiteColor) ; */
+    color: var(--primaryColor);
+}
+
+.header-title::before {
+    content: '\1F30C';
 }
 
 .header-nav {
@@ -59,12 +57,20 @@ header h1 {
 }
 
 .header-nav a {
-    color: var(--textColor);
+    color: var(--whiteColor);
     font-family: fantasy;
 
     padding: 10px 30px; 
     text-decoration: none;
     text-align: center;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    box-shadow: 0.1rem 0.1rem var(--whiteColor);
+    background: var(--refGradient);
 }
 
 .banner {
@@ -75,7 +81,6 @@ header h1 {
     background-image: url('./images/grid1.png'); 
     background-repeat: repeat;
     background-size: auto;
-    /* background-position: lfe; */
 
     padding-top: 75px;
     padding-bottom: 183px;
@@ -87,17 +92,16 @@ header h1 {
     max-width: 960px;
     margin-left:auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .banner-subtitle {
     text-align: center;
-    font-size: 16;
-    text-shadow: 1px 1px var(--textColor);
-    color: orangered;
-    
+    font-size: 32;
+
+    text-shadow: 1px 1px var(--whiteColor);
+    color: var(--orangeColor);
     background-color: transparent;
+
     /* Positioning on image */
     position: absolute;
     bottom: 8px;
@@ -114,7 +118,8 @@ header h1 {
 .profile-elements > * {
     padding: 1rem;
     margin: 1rem;
-    border-radius: 8px;
+
+    transition: flex-basis 500ms linear;;
 }
 
 .profile-banner {
@@ -125,7 +130,6 @@ header h1 {
     background-image: url('./images/grid1.png'); 
     background-repeat: repeat;
     background-size: auto;
-    /* background-position: lfe; */
 
     padding-top: 75px;
     padding-bottom: 56px;
@@ -138,27 +142,36 @@ header h1 {
     background: var(--titleGradient);
     box-shadow: 0.5rem 0.5rem;
     transform: skew(-15deg);
-    height: 10rem;
+    height: auto;
 }
 
 .profile-header {
-    color: var(--textColor);
+    color: var(--whiteColor);
     transform: skew(15deg);
     text-align: right;
+    margin-right: 2rem;
+}
+
+.profile-header::before {
+    margin-left: 1rem;
+    content: '\1F310';
 }
 
 .profile-content {
     flex: 3 3 70%;
-
     background: var(--contentGradient);
 }
 
 .about-me {
-    height: 20rem;
+    height: auto;
 }
 
-.about-me p {
-    color: var(--textColor);
+.about-me pre {
+    display: flex;
+    flex-wrap: wrap;    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1.5rem;
+    color: var(--whiteColor);
 }
 
 .work {
@@ -166,37 +179,45 @@ header h1 {
 }
 
 .contact-me {
-    height: 10rem;
+    height: auto;
+}
+
+.contact-me > *{
+    display: flex;
+    justify-content: center;
 }
 
 .profile-contacts a {
-    display: flex;
-    color: var(--textColor);
+    color: var(--whiteColor);
     font-family: fantasy;
     padding: 10px 10px;
+
     text-decoration: none;
     text-align: center;
+    
+    margin: 3rem;
 
-    justify-content: space-evenly;
+    background: var(--refGradient);
+    box-shadow: 0.1rem 0.1rem var(--whiteColor);
+}
+
+footer h4 {
+    text-shadow: 1px 1px var(--whiteColor);
+    color: var(--orangeColor);
 }
 
 /* --QUERIES-- */
 
-@media screen and (max-width: 976px){
+@media screen and (max-width: 1414px){
 
     .header-nav {
         flex-direction: column;
     }
-
-    /* .profile-header {
-        text-align: center;
-    } */
 }
 
-@media all and (min-width: 800px) {
+@media screen and (max-width: 400px) {
 
-    
-    /* .profile-content{
-        order: 1;
-    } */
+    .profile-contacts {
+        flex-direction: column;
+    }
 }
