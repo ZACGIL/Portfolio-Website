@@ -1,8 +1,13 @@
 /* --VARIABLES-- */
 :root {
-    --textColor:  #fff; 
-    --primaryColor: #13293d; 
-    --backgroundColor: rgb(156, 190, 180); 
+    --textColor:  #E7DFDD; 
+    --primaryColor: #4171F6; 
+    --secondaryColor: #A239CA;
+    --backgroundColor: #0E0B16;
+
+    --headerGradient: linear-gradient(0deg, rgba(14,11,22,1) 0%, rgba(65,113,246,1) 100%);
+    --contentGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(231,223,221,1) 100%);
+    --titleGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(162,57,202,1) 70%, rgba(65,113,246,1) 100%);
 }
 
 /* --STYLING-- */
@@ -15,9 +20,12 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     line-height: 1.5;
     font-size: 12.5;
+
+    font-family: fantasy;
 }
 
 body {
@@ -29,11 +37,20 @@ body {
 
 header {
     display: flex;
+    flex: 1 100%;
     /* Defines how to distribute the empty space between child elements */
     justify-content: space-between;
     padding: 60px;
-    background: var(--primaryColor);
+
+    outline: 2px dashed var(--secondaryColor);
+    /* outline-offset: -2px; */
+
     color: var(--textColor);
+}
+
+header h1 {
+    text-shadow: 1px 1px var(--textColor);
+    color: orangered;
 }
 
 .header-nav {
@@ -43,7 +60,9 @@ header {
 
 .header-nav a {
     color: var(--textColor);
-    padding: 10px 30px;
+    font-family: fantasy;
+
+    padding: 10px 30px; 
     text-decoration: none;
     text-align: center;
 }
@@ -51,16 +70,17 @@ header {
 .banner {
     display: flex;
     flex-wrap: wrap;
-    background-image: url('./images/geometric-pattern.jpg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    flex: 1 100%;
+
+    background-image: url('./images/grid1.png'); 
+    background-repeat: repeat;
+    background-size: auto;
+    /* background-position: lfe; */
 
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 183px;
 
     position: relative;
-    text-align: center;
 }
 
 .banner-container{
@@ -71,19 +91,112 @@ header {
     padding-right: 1rem;
 }
 
- .banner-subtitle {
-
-    background-color: var(--backgroundColor);
+.banner-subtitle {
+    text-align: center;
+    font-size: 16;
+    text-shadow: 1px 1px var(--textColor);
+    color: orangered;
+    
+    background-color: transparent;
     /* Positioning on image */
     position: absolute;
     bottom: 8px;
     right: 16px;
 } 
 
+.profile-elements {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.profile-elements > * {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.profile-banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 100%;
+
+    background-image: url('./images/grid1.png'); 
+    background-repeat: repeat;
+    background-size: auto;
+    /* background-position: lfe; */
+
+    padding-top: 75px;
+    padding-bottom: 56px;
+
+    position: relative;
+}
+
+.profile-title {
+    flex: 1 20%;
+    background: var(--titleGradient);
+    box-shadow: 0.5rem 0.5rem;
+    transform: skew(-15deg);
+    height: 10rem;
+}
+
+.profile-header {
+    color: var(--textColor);
+    transform: skew(15deg);
+    text-align: right;
+}
+
+.profile-content {
+    flex: 3 3 70%;
+
+    background: var(--contentGradient);
+}
+
+.about-me {
+    height: 20rem;
+}
+
+.about-me p {
+    color: var(--textColor);
+}
+
+.work {
+    height: 100rem;
+}
+
+.contact-me {
+    height: 10rem;
+}
+
+.profile-contacts a {
+    display: flex;
+    color: var(--textColor);
+    font-family: fantasy;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+
+    justify-content: space-evenly;
+}
+
 /* --QUERIES-- */
 
 @media screen and (max-width: 976px){
+
     .header-nav {
         flex-direction: column;
     }
+
+    /* .profile-header {
+        text-align: center;
+    } */
+}
+
+@media all and (min-width: 800px) {
+
+    
+    /* .profile-content{
+        order: 1;
+    } */
 }
