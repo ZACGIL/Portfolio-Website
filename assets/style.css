@@ -6,7 +6,7 @@
     --secondaryColor: #A239CA;
     --backgroundColor: #0E0B16;
 
-    --headerGradient: linear-gradient(0deg, rgba(14,11,22,1) 0%, rgba(65,113,246,1) 100%);
+    --nodeheaderGradient: linear-gradient(0deg, rgb(255, 217, 0) 0%, rgba(255,69,0,1) 100%);
     --contentGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(231,223,221,1) 100%);
     --titleGradient: linear-gradient(90deg, rgba(14,11,22,1) 40%, rgba(162,57,202,1) 70%, rgba(65,113,246,1) 100%);
     --refGradient: linear-gradient(90deg, rgba(162,57,202,1) 40%, rgba(65,113,246,1) 100%);
@@ -86,8 +86,9 @@ header {
     text-align: center;
     /* text size not working? */
     font-size: 32;
-
-    text-shadow: 1px 1px var(--whiteColor);
+    padding: 1rem;
+    
+    text-shadow: 1px 1px rgb(255, 217, 0);
     color: var(--orangeColor);
     background-color: transparent;
 
@@ -114,7 +115,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     flex: 1 100%;
-    background-image: url('./images/grid1.png'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/grid1.png");
     background-repeat: repeat;
     background-size: auto;
     padding-top: 75px;
@@ -186,6 +187,18 @@ header {
     justify-content: space-evenly;
 }
 
+.node-main-header {
+    color: var(--whiteColor);
+    background: var(--nodeheaderGradient);
+
+    padding: 0.5rem;
+    box-shadow: 2px 2px var(--whiteColor);
+    text-shadow: 1.3px 1.3px black; 
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
 .nodes {
     flex:1, 25%;
     height: 20%;
@@ -200,20 +213,33 @@ header {
     position: relative;
 }
 
+.node-header {
+    color: var(--whiteColor);
+    background: var(--nodeheaderGradient);
+
+    padding: 0.5rem;
+    box-shadow: 2px 2px var(--whiteColor);
+    text-shadow: 1.3px 1.3px black; 
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
 .node1 {
     background-color: red;
-    background-image: url('./images/grid1.png'); 
-    background-repeat: no-repeat;
-    background-size: auto;
 }
 .node2 {
     background-color: green;
 }
 .node3 {
-    background-color: blue;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/grid1.png");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 .node4 {
-    background-color: yellow;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/grid1.png");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .contact-me {
@@ -275,7 +301,7 @@ footer h4 {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1262px) {
 
     .work-primary-node,
     .nodes {
