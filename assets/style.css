@@ -13,9 +13,6 @@
 }
 
 /* --STYLING-- */
-
-/* add html class default text sizing and default text properties*/
-
 h1,
 h2,
 h3,
@@ -31,7 +28,6 @@ body {
 header {
     display: flex;
     flex: 1 100%;
-
     /* Defines how to distribute the empty space between child elements */
     justify-content: space-between;
     padding: 60px;
@@ -54,16 +50,13 @@ header {
 .header-nav a {
     color: var(--whiteColor);
     font-family: fantasy;
-
     padding: 10px 30px; 
     text-decoration: none;
     text-align: center;
-
     margin-left: 3rem;
     margin-right: 3rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-
     box-shadow: 0.08rem 0.08rem var(--whiteColor);
     background: var(--refGradient);
 }
@@ -114,7 +107,6 @@ header {
 .profile-elements > * {
     padding: 1rem;
     margin: 1rem;
-
     transition: flex-basis 500ms linear;;
 }
 
@@ -122,14 +114,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     flex: 1 100%;
-
     background-image: url('./images/grid1.png'); 
     background-repeat: repeat;
     background-size: auto;
-
     padding-top: 75px;
     padding-bottom: 56px;
-
     position: relative;
 }
 
@@ -143,6 +132,8 @@ header {
 
 .profile-header {
     color: var(--whiteColor);
+    text-shadow: 1.3px 1.3px black; 
+
     transform: skew(15deg);
     text-align: right;
     margin-right: 2rem;
@@ -162,16 +153,67 @@ header {
     height: auto;
 }
 
-.about-me pre {
-    display: flex;
-    flex-wrap: wrap;    
+.about-me p {  
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     line-height: 1.5rem;
+    text-shadow: 1.3px 1.3px black; 
     color: var(--whiteColor);
 }
 
 .work {
-    height: 100rem;
+    height: auto;
+}
+
+.work-primary-node {
+    display: flex;
+    flex:0 0 100%;
+    height: 20rem;
+    background-image: url('./images/grid1.png'); 
+    background-repeat: repeat;
+    background-size: auto;
+    margin-top: 3rem;
+    margin-left: 8rem;
+    padding: 1rem;
+
+    outline: 2px dashed var(--secondaryColor);
+
+    position: relative;
+}
+
+.work-node-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.nodes {
+    flex:1, 25%;
+    height: 20%;
+    margin-top: 3rem;
+    margin-left: 8rem;
+    margin-bottom: 3rem;
+    padding: 10rem;
+    max-width: 10rem;
+
+    outline: 2px dashed var(--secondaryColor);
+
+    position: relative;
+}
+
+.node1 {
+    background-color: red;
+    background-image: url('./images/grid1.png'); 
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.node2 {
+    background-color: green;
+}
+.node3 {
+    background-color: blue;
+}
+.node4 {
+    background-color: yellow;
 }
 
 .contact-me {
@@ -203,7 +245,9 @@ footer h4 {
 
 /* HOVER EFFECT */
 .header-nav a:hover,
-.profile-contacts a:hover{
+.profile-contacts a:hover,
+.work-primary-node:hover,
+.nodes:hover {
     box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 80px #f0f,
@@ -213,7 +257,7 @@ footer h4 {
     0 0 50px #fff,
     -10px 0 80px #f0f,
     10px 0 80px #0ff;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 
 /* --QUERIES-- */
@@ -224,10 +268,19 @@ footer h4 {
     }
 }
 
-/* not working? */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 456px) {
 
     .profile-contacts {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .work-primary-node,
+    .nodes {
+
+        margin: 1rem;
+        justify-content: center;
     }
 }
