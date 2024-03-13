@@ -19,6 +19,7 @@ h3,
 h4 {
     line-height: 1.5;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
 header {
     display: flex;
     flex: 1 100%;
-    /* Defines how to distribute the empty space between child elements */
+    /* defines how to distribute the empty space between child elements */
     justify-content: space-between;
     padding: 60px;
     outline: 2px dashed var(--secondaryColor);
@@ -84,15 +85,13 @@ header {
 
 .banner-subtitle {
     text-align: center;
-    /* text size not working? */
-    font-size: 32;
     padding: 1rem;
     
     text-shadow: 1px 1px rgb(255, 217, 0);
     color: var(--orangeColor);
     background-color: transparent;
 
-    /* Positioning on image */
+    /* positioning on image */
     position: absolute;
     bottom: 8px;
     right: 16px;
@@ -132,9 +131,10 @@ header {
 }
 
 .profile-header {
+    font-size: 25px;
     color: var(--whiteColor);
     text-shadow: 1.3px 1.3px black; 
-
+    
     transform: skew(15deg);
     text-align: right;
     margin-right: 2rem;
@@ -169,9 +169,10 @@ header {
     display: flex;
     flex:0 0 100%;
     height: 20rem;
-    background-image: url('./images/grid1.png'); 
-    background-repeat: repeat;
-    background-size: auto;
+    background-image: url('./images/cheatsheet.PNG'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     margin-top: 3rem;
     margin-left: 8rem;
     padding: 1rem;
@@ -188,6 +189,7 @@ header {
 }
 
 .node-main-header {
+    font-size: 20px;
     color: var(--whiteColor);
     background: var(--nodeheaderGradient);
 
@@ -200,13 +202,13 @@ header {
 }
 
 .nodes {
-    flex:1, 25%;
+    /* this may or may not be commented out depending if you want to keep the node sizes uniform */
+    /* flex:1; */
     height: 20%;
     margin-top: 3rem;
     margin-left: 8rem;
     margin-bottom: 3rem;
     padding: 10rem;
-    max-width: 10rem;
 
     outline: 2px dashed var(--secondaryColor);
 
@@ -214,6 +216,7 @@ header {
 }
 
 .node-header {
+    font-size: 20px;
     color: var(--whiteColor);
     background: var(--nodeheaderGradient);
 
@@ -226,10 +229,16 @@ header {
 }
 
 .node1 {
-    background-color: red;
+    background-image: url('./images/template.PNG'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .node2 {
-    background-color: green;
+    background-image: url('./images/horiseon.PNG'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .node3 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/grid1.png");
@@ -265,6 +274,7 @@ header {
 }
 
 footer h4 {
+    font-size: 25px;
     text-shadow: 0.08rem 0.08rem var(--whiteColor);
     color: var(--orangeColor);
 }
