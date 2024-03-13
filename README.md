@@ -1,10 +1,9 @@
 # Portfolio-Website
-
-## Description
 Hi!
 
 My name is Zac Gilfoyle.
 
+## Description
 This repository contains HTML, CSS and various assets used to create my first personal portfolio website for the early stages of my coding bootcamp.
 
 This website is a culmination of the skills developed in the first couple weeks of the course and utilizes flexbox in the CSS to create a reponsive website layout.
