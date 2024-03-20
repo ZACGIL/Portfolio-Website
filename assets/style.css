@@ -27,12 +27,14 @@ body {
 }                   
 
 header {
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap;
     flex: 1 100%;
     /* defines how to distribute the empty space between child elements */
     justify-content: space-between;
     padding: 60px;
     outline: 2px dashed var(--secondaryColor);
+    height: auto;
 }
 
 .header-title {
@@ -159,6 +161,7 @@ header {
     line-height: 1.5rem;
     text-shadow: 1.3px 1.3px black; 
     color: var(--whiteColor);
+    margin-bottom: 2rem;
 }
 
 .work {
@@ -320,3 +323,19 @@ footer h4 {
         justify-content: center;
     }
 }
+
+/* for mobile devices */
+@media screen and (max-width: 836px) {
+    
+    header{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 392px) {
+    
+    .nodes{
+        padding: 7rem;
+    }
+}
+    
